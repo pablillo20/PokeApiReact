@@ -6,18 +6,20 @@ import { Juego } from './Componentes/juegoPokemons';
 import { RutasPrivadas } from './RutasPrivadas';
 import { Error404 } from './Componentes/Error404';
 import logo from './Imagenes/logo.png'
+import { Login } from './Componentes/login';
+
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <nav class="nav">
-          <Link class="navegacion" to="/">
+          <Link  to="/">
             <img src={logo} alt="Logo"/>
           </Link>
           <Link class="navegacion" to ="/juego">Juego</Link>
           <Link class="pokemons"to="/pokemons">Pokemons</Link>
-          <Link class="navegacion" to="/">Inicio</Link>
+          <Link class="login" to="/login">🙎‍♂️</Link>
         </nav>
 
         <Routes>
@@ -25,6 +27,7 @@ function App() {
           <Route element={<RutasPrivadas />}>
           <Route exact path="/juego" Component={Juego}></Route>
           </Route>
+          <Route exact path="/login" Component={Login}></Route>
           <Route exact path="/pokemons" Component={ListadoPokemon}></Route>
           <Route exact path="/detalles/:name" Component={DetallesPokemons}></Route>
           <Route exact path="*" Component={Error404}></Route>

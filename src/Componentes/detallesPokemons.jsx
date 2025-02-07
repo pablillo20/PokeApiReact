@@ -74,15 +74,20 @@ export function DetallesPokemons() {
   return (
     <div className="pokemon-details">
       <h1 className="pokemon-name">
-        <img src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={`${pokemon.name} animated`} />
+        <img className="pokemon-animated-sprite" src={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default} alt={`${pokemon.name} animated`} />
         {pokemon.name.toUpperCase()}
       </h1>
       <div className="pokemon-images">
-        <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
-        <img src={pokemon.sprites.other['official-artwork'].front_shiny} alt={`${pokemon.name} shiny`} />
+        <img className="pokemon-official-artwork" src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
+        <img className="pokemon-shiny-artwork" src={pokemon.sprites.other['official-artwork'].front_shiny} alt={`${pokemon.name} shiny`} />
       </div>
-      <h2>Estadísticas</h2>
-      <canvas ref={chartRef}></canvas>
+      <h2 className="pokemon-details-title">Detalles</h2>
+      <p className="pokemon-type">Tipo: {pokemon.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
+      <p className="pokemon-ability">Habilidad: {pokemon.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ')}</p>
+      <p className="pokemon-weight">Peso: {pokemon.weight} kg</p>
+      <p className="pokemon-height">Altura: {pokemon.height} m</p>
+      <h2 className="pokemon-stats-title">Estadísticas</h2>
+      <canvas className="pokemon-stats-chart" ref={chartRef}></canvas>
     </div>
   );
 }

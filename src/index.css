@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #d8afaf;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px 20px;
 }
 
@@ -28,13 +28,15 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   /* Ajusta el color del texto */
   font-size: 40px;
 }
 
 .navegacion:hover {
-  color: blue;
+  color: transparent;
+  background:url('./Imagenes/juego.png') no-repeat center;
+  background-size: contain;
 }
 
 .pokemons:hover {
@@ -141,10 +143,16 @@ body {
 
 .pokemon-name {
   font-size: 3rem;
-  color: #ff6347;
+  color: yellow; /* Cambiado a amarillo */
   text-shadow: 2px 2px #000;
   margin-bottom: 1rem;
 }
+
+.pokemon-animated-sprite {
+  width: 100px;
+  height: 100px;
+}
+
 .pokemon-images {
   display: flex;
   justify-content: center;
@@ -152,12 +160,32 @@ body {
   margin-bottom: 2rem;
 }
 
-.pokemon-images img {
+.pokemon-official-artwork,
+.pokemon-shiny-artwork {
   width: 200px;
   height: 200px;
-  border: 3px solid #ff6347;
+  border: 3px solid yellow; /* Cambiado a amarillo */
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-details-title,
+.pokemon-stats-title {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.pokemon-type,
+.pokemon-ability,
+.pokemon-weight,
+.pokemon-height {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.pokemon-stats-chart {
+  margin-top: 2rem;
 }
 
 canvas {
@@ -200,7 +228,7 @@ canvas {
   justify-content: center;
   font-size: 2rem;
   color: #fff;
-  background-color: #ff6347;
+  background-color: rgba(0, 0, 0, 0.8); /* Cambiado a negro transparente */
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -222,7 +250,7 @@ canvas {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   color: #fff;
-  background-color: #ff6347;
+  background-color: rgba(0, 0, 0, 0.8); /* Cambiado a negro transparente */
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -231,4 +259,167 @@ canvas {
 
 .reiniciar-boton:hover {
   background-color: #e5533d;
+}
+
+.ranking-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.podio {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.podio-primero, .podio-segundo, .podio-tercero {
+  background-color: rgba(0, 0, 0, 0.8); /* Cambiado a negro transparente */
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 150px;
+  text-align: center;
+}
+
+.podio-primero {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.podio-segundo, .podio-tercero {
+  font-size: 1.2rem;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.login-container p {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff6347;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #e5533d;
+}
+
+.login-container .error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+
+.landing-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+}
+.header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: yellow;
+  border: 2px solid black;
+  font-family: 'Pokemon', sans-serif;
+}
+
+.header p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.main-content {
+  margin-top: 20px;
+}
+
+.pokemon-gallery {
+  margin: 20px 0;
+}
+
+.pokemon-gallery h2 {
+  font-size: 2em;
+  color: yellow;
+  margin-bottom: 0.5rem;
+}
+
+.pokemon-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pokemon-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.pokemon-card h3 {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 10px;
 }
